@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.heart-box {
+  position: absolute;
+}
+
+.heart {
+  position: relative;
+
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 50% 50% 0 0;
+}
+
+#one {
+  transform-origin: center;
+  transform: rotate(-45deg) scale(1);
+  animation: heartOne 1s infinite;
+  animation-delay: 2s;
+}
+
+#two {
+  transform-origin: center;
+  transform: rotate(45deg) scale(1);
+  animation: heartTwo 1s infinite;
+  animation-delay: 2s;
+}
+
+.heart::after {
+  content: "";
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  position: absolute;
+  top: 141px;
+  left: 0;
+}
+
+@keyframes heartOne {
+  0%,
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(0.99);
+  }
+}
+@keyframes heartTwo {
+  0%,
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(0.99);
+  }
+}
+
+.heart::after {
+  content: "";
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  top: 141px;
+  left: 0;
+}
+.arrow {
+  border-radius: 12px;
+  position: relative;
+  width: 3px;
+  height: 500px;
+  background-color: white;
+  rotate: 45deg;
+  top: 16rem;
+  left: -25rem;
+  z-index: -1;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.963),
+    0 0 30px rgba(255, 20, 147, 0.9);
+  animation: moveArrow 3s forwards;
+}
+
+@keyframes moveArrow {
+  100% {
+    transform: translateX(0rem) translateY(-18rem);
+  }
+}
+.arrow::after {
+  content: ">";
+  color: aliceblue;
+  position: absolute;
+  font-weight: 900;
+  font-size: 2rem;
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.963),
+    0 0 30px rgba(255, 20, 147, 0.9);
+  top: -15px;
+  left: -8px;
+  transform: rotate(-89deg);
+}
+.arrow::before {
+  content: ">>>";
+  color: aliceblue;
+  position: absolute;
+  font-weight: 900;
+  font-size: 2rem;
+
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.963),
+    0 0 30px rgba(255, 20, 147, 0.9);
+  top: 29.5rem;
+  left: -27px;
+  transform: rotate(-91deg);
+}
+h1 {
+  color: white;
+  font-family: cursive;
+  position: relative;
+  left: 14.5rem;
+  top: 33px;
+  z-index: 9;
+  opacity: 0;
+  transition: 1s ease-in-out;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 3s;
+}
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+.shadow {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: wheat;
+  position: relative;
+  top: 73px;
+  left: -307px;
+  z-index: -1;
+  box-shadow: 0 0 5000px rgb(224, 58, 12), 0 0 3500px rgba(235, 5, 127, 0.989);
+}
